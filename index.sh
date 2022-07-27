@@ -18,7 +18,7 @@ function checkOS() {
         source /etc/os-release
 
         if [[ "$ID" == "debian" || "$ID" == "raspbian" ]]; then
-        if [[ ! $VERSION_ID =~ (10|11) ]]; then
+        if [[ ! $VERSION_ID =~ (10|9) ]]; then
             echo "⚠️ ${alert}Your version of Debian is not supported.${normal}"
             echo ""
             echo "However, if you're using older or unstable/testing then you can continue."
@@ -68,7 +68,7 @@ function checkOS() {
 
 initialCheck
 sudo apt install curl
-curl -O https://raw.githubusercontent.com/LACOSTAR91/install-scripts/main/menu.bash
+curl -O https://raw.githubusercontent.com/LACOSTAR91/install-scripts/main/scripts/menu.bash
 
 #Colors
 red=$(tput setaf 1)
@@ -97,21 +97,21 @@ function callback() {
     in
         0)
             clear
-            curl -O https://raw.githubusercontent.com/LACOSTAR91/install-scripts/main/nginx.sh | bash
+            curl -O https://raw.githubusercontent.com/LACOSTAR91/install-scripts/main/scripts/nginx.sh | bash
             clear
             echo "$green Starting Nginx installation... $normal"
             bash nginx.sh
             ;;
         1)
             clear
-            curl -O https://raw.githubusercontent.com/LACOSTAR91/install-scripts/main/nodejs.sh | bash
+            curl -O https://raw.githubusercontent.com/LACOSTAR91/install-scripts/main/scripts/nodejs.sh | bash
             clear
             echo "$green Starting Node.JS/NPM installation... $normal"
             bash nodejs.sh
             ;;
         2)
             clear
-            curl -O https://raw.githubusercontent.com/LACOSTAR91/install-scripts/main/pma.sh | bash
+            curl -O https://raw.githubusercontent.com/LACOSTAR91/install-scripts/main/scripts/pma.sh | bash
             clear
             echo "$green Starting PHPMyAdmin installation... $normal"
             bash pma.sh
