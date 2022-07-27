@@ -2,7 +2,7 @@
 Un script permettant d'installer des application/logiciels rapidement
 
 Lancer la commande suivante dans le terminal afin de commencer à installer un logiciel:<br>
-`curl -O https://raw.githubusercontent.com/LACOSTAR91/install-scripts/main/index.sh | bash`
+`curl -O https://raw.githubusercontent.com/LACOSTAR91/install-scripts/main/index.sh | bash index.sh`
 
 Logiciels disponible:
 - Nginx
