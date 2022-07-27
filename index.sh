@@ -1,4 +1,3 @@
-clear
 function isRoot() {
   if [ "$EUID" -ne 0 ]; then
     return 1
@@ -7,6 +6,7 @@ function isRoot() {
 
 function initialCheck() {
   if ! isRoot; then
+    clear
     echo "Sorry, you need to run this as root"
     exit 1
   fi
@@ -20,6 +20,7 @@ function checkOS() {
 
         if [[ "$ID" == "debian" || "$ID" == "raspbian" ]]; then
         if [[ ! $VERSION_ID =~ (10|9) ]]; then
+            clear
             echo "⚠️ ${alert}Your version of Debian is not supported.${normal}"
             echo ""
             echo "However, if you're using older or unstable/testing then you can continue."
@@ -35,6 +36,7 @@ function checkOS() {
         elif [[ "$ID" == "ubuntu" ]]; then
         OS="ubuntu"
         if [[ ! $VERSION_ID =~ (20.04|22.04) ]]; then
+            clear
             echo "⚠️ ${alert}Your version of Ubuntu is not supported.${normal}"
             echo ""
             echo "However, if you're using Older Ubuntu or beta, then you can continue."
@@ -49,6 +51,7 @@ function checkOS() {
         fi
         fi
     elif [[ -e /etc/centos-release ]]; then
+        clear
         if ! grep -qs "^CentOS Linux release 7" /etc/centos-release; then
         echo "${alert}Your version of CentOS is not supported.${normal}"
         echo "${red}Keep in mind they are not supported, though.${normal}"
@@ -62,6 +65,7 @@ function checkOS() {
         fi
         fi
     else
+        clear
         echo "Looks like you aren't running this script on a Debian, Ubuntu or CentOS system ${normal}"
         exit 1
     fi
@@ -70,7 +74,7 @@ function checkOS() {
 initialCheck
 sudo apt install curl
 curl -O https://raw.githubusercontent.com/LACOSTAR91/install-scripts/main/scripts/menu.bash
-
+clear
 #Colors
 red=$(tput setaf 1)
 green=$(tput setaf 2)
