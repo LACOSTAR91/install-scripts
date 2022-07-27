@@ -6,7 +6,7 @@ Lancer la commande suivante dans le terminal afin de commencer à installer un l
 
 Logiciels disponible:
 - Nginx
-- NodeJS
+- NodeJS/NPM/PM2
 - PHPMyAdmin
 
 *Les logiciels ont été tester seulement sur Debian 10 et 11 pour le moment*
