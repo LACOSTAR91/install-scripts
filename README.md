@@ -9,4 +9,5 @@ Logiciels disponible:
 - NodeJS/NPM/PM2
 - PHPMyAdmin
 
-*Les logiciels ont été tester seulement sur Debian 10 et 11 pour le moment*
+*Les scripts sont encore en développement ils ne sont pas encore tout à fait stable et fonctionnel, tout utilisation de l'un de ces scripts est à vos risques et périles*
+<!-- *Les logiciels ont été tester seulement sur Debian 10 et 11 pour le moment* -->
